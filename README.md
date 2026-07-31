@@ -189,6 +189,4 @@ Possible improvements:
 
 ## Author
 
-Tharun Sridhar
-Computer Science Student
-Focus: Backend Development, AI Integration, and Security
+Tharun Sridhar Natarajan
