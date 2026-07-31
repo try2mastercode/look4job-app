@@ -1,6 +1,9 @@
 # Look4Job
 
-Look4Job is a Python-based job search and resume matching application.  
+![Python](https://img.shields.io/badge/Python-3-3776AB?style=flat-square&logo=python&logoColor=white)
+![FastAPI](https://img.shields.io/badge/FastAPI-App-009688?style=flat-square&logo=fastapi&logoColor=white)
+
+Look4Job is a Python-based job search and resume matching application.
 It automatically finds jobs from multiple job boards and ranks them based on how well they match a user's resume.
 
 The system allows users to upload a resume (PDF), extract skills, search job platforms, and display the most relevant job listings.
@@ -35,23 +38,22 @@ Look4Job collects jobs from multiple platforms including:
 - Bayt
 - BDJobs
 
-Jobs from these sites are scraped concurrently for faster results. :contentReference[oaicite:0]{index=0}
+Jobs from these sites are scraped concurrently for faster results.
 
 ---
 
 ## Project Structure
 
-
+```text
 look4job/
-
-init.py # Main job scraping engine
-web.py # FastAPI web application
-matcher.py # Resume parsing and job ranking logic
-model.py # Data models and job structures
-util.py # Utility functions
-exception.py # Custom exceptions
-requirements.txt # Project dependencies
-
+|-- __init__.py       Main job scraping engine
+|-- web.py            FastAPI web application
+|-- matcher.py        Resume parsing and job ranking logic
+|-- model.py          Data models and job structures
+|-- util.py           Utility functions
+|-- exception.py      Custom exceptions
+`-- requirements.txt  Project dependencies
+```
 
 ---
 
@@ -81,19 +83,18 @@ Web Templates
 
 ## Installation
 
-Clone the repository
+Clone the repository:
 
-
-git clone https://github.com/tharunsridhar/look4job-app
-
+```bash
+git clone https://github.com/tharunsridhar/look4job-app.git
 cd look4job-app
+```
 
+Install dependencies:
 
-Install dependencies
-
-
+```bash
 pip install -r requirements.txt
-
+```
 
 ---
 
@@ -101,15 +102,15 @@ pip install -r requirements.txt
 
 Start the server:
 
-
+```bash
 uvicorn web:app --reload
+```
 
+Open in browser:
 
-Open browser:
-
-
+```text
 http://127.0.0.1:8000
-
+```
 
 ---
 
@@ -130,16 +131,16 @@ http://127.0.0.1:8000
 
 Jobs are ranked using multiple signals:
 
-Skill Match  
+**Skill Match**
 Counts how many skills from the resume appear in the job description.
 
-Experience Match  
+**Experience Match**
 Compares required experience with the candidate's experience.
 
-Title Relevance  
+**Title Relevance**
 Filters out irrelevant roles such as sales or marketing.
 
-Seniority Rules  
+**Seniority Rules**
 Adjusts ranking based on titles like:
 - Intern
 - Junior
